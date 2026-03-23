@@ -2,8 +2,8 @@ name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: ["master", "main"]  # 支持 main 分支
-  workflow_dispatch:  # 支持手动触发
+    branches: ["master", "main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,6 +20,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      # ✅ 新增：清理冲突的配置文件
+      - name: Clean conflicting config files
+        run: |
+          rm -f next.config.js
+          ls -la next.config.* || echo "Only TypeScript config found"
       
       - name: Detect package manager
         id: detect-package-manager
