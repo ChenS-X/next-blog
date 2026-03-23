@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
+  basePath: '/next-blog',
   images: {
     unoptimized: true, // Required for static export
   },
