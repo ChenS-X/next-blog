@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-stone-200 dark:border-stone-800;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply antialiased selection:bg-emerald-100 dark:selection:bg-emerald-900/30;
+  }
+}
+
+/* Custom prose overrides for a cleaner look */
+.prose {
+  --tw-prose-body: var(--color-stone-600);
+  --tw-prose-headings: var(--color-stone-900);
+  --tw-prose-links: var(--color-emerald-600);
+  --tw-prose-bold: var(--color-stone-900);
+  --tw-prose-counters: var(--color-stone-400);
+  --tw-prose-bullets: var(--color-stone-300);
+  --tw-prose-hr: var(--color-stone-100);
+  --tw-prose-quotes: var(--color-stone-900);
+  --tw-prose-quote-borders: var(--color-stone-200);
+  --tw-prose-captions: var(--color-stone-500);
+  --tw-prose-code: var(--color-emerald-600);
+  --tw-prose-pre-code: var(--color-stone-200);
+  --tw-prose-pre-bg: var(--color-stone-900);
+  --tw-prose-th-borders: var(--color-stone-200);
+  --tw-prose-td-borders: var(--color-stone-100);
+}
+
+.dark .prose {
+  --tw-prose-body: var(--color-stone-400);
+  --tw-prose-headings: var(--color-stone-100);
+  --tw-prose-links: var(--color-emerald-500);
+  --tw-prose-bold: var(--color-stone-100);
+  --tw-prose-counters: var(--color-stone-500);
+  --tw-prose-bullets: var(--color-stone-700);
+  --tw-prose-hr: var(--color-stone-900);
+  --tw-prose-quotes: var(--color-stone-100);
+  --tw-prose-quote-borders: var(--color-stone-800);
+  --tw-prose-captions: var(--color-stone-500);
+  --tw-prose-code: var(--color-emerald-500);
+  --tw-prose-pre-code: var(--color-stone-300);
+  --tw-prose-pre-bg: var(--color-stone-900);
+  --tw-prose-th-borders: var(--color-stone-700);
+  --tw-prose-td-borders: var(--color-stone-800);
+}
+
+/* Highlight.js overrides */
+.prose pre {
+  @apply rounded-2xl border border-stone-200 dark:border-stone-800 bg-stone-950! p-6 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent! p-0! text-sm! font-mono leading-relaxed;
+}
+
+.prose :not(pre) > code {
+  @apply px-1.5 py-0.5 rounded-md bg-stone-100 dark:bg-stone-900 text-emerald-600 dark:text-emerald-500 font-mono text-[0.9em] before:content-none after:content-none;
+}
+

@@ -1,0 +1,5 @@
+{
+  "name": "Next.js Markdown Blog",
+  "description": "A high-performance blog website built with Next.js and Tailwind CSS, featuring static site generation from Markdown files with CDN-hosted images.",
+  "requestFramePermissions": []
+}
