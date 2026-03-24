@@ -3,7 +3,7 @@ title: "Frist In React"
 date: "2026-03-24"
 description: "学习React的第一步[强调⚡]"
 headerImage: "https://chens-x.github.io/next-blog/images/react.png"
-thumbnail: "[https://chens-x.github.io/next-blog/images/react.png"
+thumbnail: "https://chens-x.github.io/next-blog/images/react.png"
 ---
 
 # Frist In React
