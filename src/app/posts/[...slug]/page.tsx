@@ -60,7 +60,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
           </Link>
           
           <div className="flex gap-8 text-sm text-stone-400 dark:text-stone-600">
-            <button className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Share on Twitter</button>
+            {/* <button className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Share on Twitter</button> */}
             <button className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Copy Link</button>
           </div>
         </div>

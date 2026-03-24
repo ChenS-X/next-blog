@@ -21,6 +21,6 @@ globalThis.__BUILD_MANIFEST = {
     "static/chunks/node_modules_next_dist_115brz8._.js",
     "static/chunks/node_modules_@swc_helpers_cjs_0-4ujiy._.js",
     "static/chunks/_0rqeker._.js",
-    "static/chunks/turbopack-_0p44nws._.js"
+    "static/chunks/turbopack-_12.~._h._.js"
   ]
 };
