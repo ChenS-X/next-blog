@@ -7,7 +7,6 @@ import { ThemeToggle } from "@/src/components/ThemeToggle";
 import { Navbar } from "@/src/components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
-import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,7 +72,6 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
-          <Toaster position="top-center" />
         </ThemeProvider>
       </body>
     </html>
