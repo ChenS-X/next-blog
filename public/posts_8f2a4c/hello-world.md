@@ -2,8 +2,8 @@
 title: "Hello World: 我的第一篇blog"
 date: "2026-03-23"
 description: "Welcome to my new blog built with Next.js and Tailwind CSS."
-headerImage: "https://picsum.photos/seed/blog1/1200/600"
-thumbnail: "https://picsum.photos/seed/blog1/400/300"
+headerImage: "https://chens-x.github.io/next-blog/images/coding.gif"
+thumbnail: "https://chens-x.github.io/next-blog/images/coding.gif"
 ---
 
 # Welcome to my blog!

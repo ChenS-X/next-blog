@@ -10,11 +10,24 @@ import {
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
-      <header className="mb-20">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-stone-900 dark:text-stone-100">
+      <header
+        className="mb-20 h-110 rounded-xl p-4 flex flex-col justify-end"
+        style={{
+          backgroundImage: `url(/next-blog/images/coding.gif)`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <h1
+          className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-stone-100"
+          style={{ textShadow: "2px 2px 4px rgba(255, 0, 0, 1)" }}
+        >
           About Me.
         </h1>
-        <p className="text-lg text-stone-500 dark:text-stone-400 leading-relaxed max-w-2xl">
+        <p
+          className="text-lg text-stone-100 leading-relaxed max-w-2xl"
+          style={{ textShadow: "2px 2px 2px rgba(0,0,0,.8)" }}
+        >
           我是一名具有5年经验的前端开发人员。我具有<strong>Vue2/3</strong>
           多年开发经验，熟练掌握<strong>React</strong>、
           <strong>TypeScript</strong>、<strong>Nodejs（express/Koa）</strong>、
@@ -25,12 +38,16 @@ export default function AboutPage() {
         <div className="flex flex-wrap gap-6 mt-8">
           <a
             href="mailto:sxchen136@gmail.com"
-            className="flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
+            className="flex items-center gap-2 text-sm font-medium text-stone-100 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
+            style={{ textShadow: "1px 1px 2px rgba(0,0,0,.6)" }}
           >
             <Mail className="w-4 h-4" />
             chensxyouxiang@163.com
           </a>
-          <div className="flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-stone-400">
+          <div
+            className="flex items-center gap-2 text-sm font-medium text-stone-100"
+            style={{ textShadow: "1px 1px 2px rgba(0,0,0,.6)" }}
+          >
             <MapPin className="w-4 h-4" />
             Guangzhou China
           </div>
