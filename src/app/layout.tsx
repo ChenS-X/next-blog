@@ -64,6 +64,7 @@ export default function RootLayout({
                 </a> */}
                 <a
                   href="https://github.com/ChenS-X"
+                  target="_blank"
                   className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
                 >
                   GitHub

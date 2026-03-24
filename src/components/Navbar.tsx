@@ -7,6 +7,7 @@ import { cn } from "@/src/lib/utils";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -18,6 +19,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const { resolvedTheme } = useTheme();
   // Close sidebar when route changes
   useEffect(() => {
     setIsOpen(false);
@@ -160,10 +162,14 @@ export function Navbar() {
                   </Link>
                   <a
                     href="https://github.com/ChenS-X"
+                    target="_blank"
                     className="text-lg font-semibold tracking-tight hover:opacity-70 transition-opacity flex items-center gap-1.5"
                   >
                     <Image
-                      src="/next-blog/images/github.svg"
+                      src={
+                        `/next-blog/images/github${resolvedTheme === "dark" ? "_dark" : ""}` +
+                        ".svg"
+                      }
                       alt="Logo"
                       width={32}
                       height={32}
