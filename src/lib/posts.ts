@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
@@ -122,6 +123,7 @@ export async function getPostData(slugParts: string[]): Promise<PostData> {
 
   // Use remark and rehype to convert markdown into HTML string with syntax highlighting
   const processedContent = await remark()
+    .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeHighlight)

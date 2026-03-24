@@ -8,6 +8,7 @@ import { Navbar } from "@/src/components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { Toaster } from "sonner";
+import { Mail } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,11 +53,11 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
 
           <footer className="border-t border-stone-100 dark:border-stone-900 py-16">
-            <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-8">
+            <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-start gap-8">
               <p className="text-stone-400 dark:text-stone-600 text-sm">
                 &copy; {new Date().getFullYear()} Minimal Blog.
               </p>
-              <div className="flex gap-8 text-sm text-stone-400 dark:text-stone-600">
+              <div className="flex flex-col gap-4 text-sm text-stone-400 dark:text-stone-600">
                 {/* <a
                   href="#"
                   className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
@@ -69,6 +70,13 @@ export default function RootLayout({
                   className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
                 >
                   GitHub
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors flex items-center"
+                >
+                  <Mail className="w-4 h-4" />
+                  chensxyouxiang@163.com
                 </a>
               </div>
             </div>
