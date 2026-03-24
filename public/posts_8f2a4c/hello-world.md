@@ -4,6 +4,7 @@ date: "2026-03-23"
 description: "Welcome to my new blog built with Next.js and Tailwind CSS."
 headerImage: "https://chens-x.github.io/next-blog/images/coding.gif"
 thumbnail: "https://chens-x.github.io/next-blog/images/coding.gif"
+sticky: true
 ---
 
 # Welcome to my blog!

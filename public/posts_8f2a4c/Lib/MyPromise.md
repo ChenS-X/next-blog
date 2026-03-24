@@ -4,7 +4,6 @@ date: "2026-03-24"
 description: "跟着手敲一遍Promise，认识Promise的实现逻辑。"
 headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774341795903.png"
 thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774341795903.png"
-deleted: true
 ---
 
 # 手敲Promise，认识Promise

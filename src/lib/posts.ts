@@ -18,6 +18,8 @@ export interface PostData {
   description: string;
   headerImage: string;
   thumbnail: string;
+  deleted?: boolean;
+  sticky?: boolean;
   contentHtml?: string;
 }
 
@@ -70,12 +72,22 @@ export function getSortedPostsData(): PostData[] {
           description: string; 
           headerImage: string; 
           thumbnail: string; 
+          deleted?: boolean;
+          sticky?: boolean;
         }),
       };
-    });
+    })
+    .filter(post => !post.deleted); // Filter out deleted posts
 
-  // Sort posts by date
+  // Sort posts by sticky status first, then by date
   return allPostsData.sort((a, b) => {
+    if (a.sticky && !b.sticky) {
+      return -1;
+    }
+    if (!a.sticky && b.sticky) {
+      return 1;
+    }
+    // If both are sticky or both are not, sort by date
     if (a.date < b.date) {
       return 1;
     } else {
@@ -103,6 +115,10 @@ export async function getPostData(slugParts: string[]): Promise<PostData> {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
+  if (matterResult.data.deleted) {
+    throw new Error('Post not found');
+  }
+
   // Use remark and rehype to convert markdown into HTML string with syntax highlighting
   const processedContent = await remark()
     .use(remarkRehype)
@@ -124,6 +140,8 @@ export async function getPostData(slugParts: string[]): Promise<PostData> {
       description: string; 
       headerImage: string; 
       thumbnail: string; 
+      deleted?: boolean;
+      sticky?: boolean;
     }),
   };
 }
@@ -137,6 +155,11 @@ export function getAllPostSlugs() {
   
   return filePaths
     .filter((filePath) => filePath.endsWith('.md'))
+    .filter((filePath) => {
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const matterResult = matter(fileContents);
+      return !matterResult.data.deleted;
+    })
     .map((filePath) => {
       const relativePath = path.relative(postsDirectory, filePath);
       const slug = relativePath.replace(/\.md$/, '');

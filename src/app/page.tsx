@@ -1,6 +1,7 @@
 import { getSortedPostsData, getCategories } from "@/src/lib/posts";
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
+import { Pin } from "lucide-react";
 
 export default function Home() {
   const currentPage = 1;
@@ -39,7 +40,7 @@ export default function Home() {
       </header>
 
       <div className="space-y-16">
-        {paginatedPosts.map(({ slug, date, title, description, category }) => (
+        {paginatedPosts.map(({ slug, date, title, description, category, sticky }) => (
           <Link
             key={slug}
             href={`/posts/${slug}`}
@@ -53,6 +54,12 @@ export default function Home() {
                 <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-500">
                   {category}
                 </span>
+                {sticky && (
+                  <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-500">
+                    <Pin className="w-3 h-3" />
+                    Sticky
+                  </span>
+                )}
               </div>
             </div>
             
