@@ -5,6 +5,7 @@ import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
 
 // Use a random-looking directory name to obfuscate the source markdown files
 const POSTS_SUBDIR = 'posts_8f2a4c';
@@ -121,7 +122,8 @@ export async function getPostData(slugParts: string[]): Promise<PostData> {
 
   // Use remark and rehype to convert markdown into HTML string with syntax highlighting
   const processedContent = await remark()
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(matterResult.content);

@@ -1,6 +1,7 @@
 import { getPostsByCategory, getCategories } from "@/src/lib/posts";
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
+import { Pin } from "lucide-react";
 
 export async function generateStaticParams() {
   const categories = getCategories();
@@ -48,6 +49,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-500">
                 {post.category}
               </span>
+              {post.sticky && (
+                <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-500">
+                  <Pin className="w-3 h-3" />
+                  Sticky
+                </span>
+              )}
               <time className="text-sm font-medium text-stone-400 dark:text-stone-600 tabular-nums">
                 {format(parseISO(post.date), 'MMMM d, yyyy')}
               </time>
