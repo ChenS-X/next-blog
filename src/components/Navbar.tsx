@@ -161,7 +161,7 @@ export function Navbar() {
                     NextBlog.
                   </Link>
                   <a
-                    href="https://github.com/ChenS-X"
+                    href={process.env.GITHUB_PAGE || ''}
                     target="_blank"
                     className="text-lg font-semibold tracking-tight hover:opacity-70 transition-opacity flex items-center gap-1.5"
                   >

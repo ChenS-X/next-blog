@@ -18,4 +18,6 @@ thumbnail: "https://picsum.photos/seed/blog1/400/300"
 
 不定期更新，欢迎来踩😊
 
+[About Me](https://chens-x.github.io/next-blog/about)
+
 [Enjoy reading!](https://chens-x.github.io/next-blog/)

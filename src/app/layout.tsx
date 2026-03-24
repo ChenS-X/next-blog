@@ -63,7 +63,7 @@ export default function RootLayout({
                   Twitter
                 </a> */}
                 <a
-                  href="https://github.com/ChenS-X"
+                  href={process.env.GITHUB_PAGE || ''}
                   target="_blank"
                   className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
                 >
