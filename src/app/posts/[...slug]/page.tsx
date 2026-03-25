@@ -1,7 +1,8 @@
-import CopyButton from "@/src/components/CopyButton";
 import { getAllPostSlugs, getPostData } from "@/src/lib/posts";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
+import PostContent from "@/src/components/PostContent";
+import CopyButton from "@/src/components/CopyButton";
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -62,9 +63,7 @@ export default async function Post({
         </div>
       )}
 
-      <div className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-emerald-600 dark:prose-a:text-emerald-500 prose-img:rounded-xl">
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }} />
-      </div>
+      <PostContent html={postData.contentHtml || ""} />
 
       <div className="mt-32 pt-12 border-t border-stone-100 dark:border-stone-900">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
