@@ -1,7 +1,7 @@
 ---
-title: "[闲聊]在谈替代之前，至少知道现阶段AI到底能做些什么（前端版）"
+title: "[闲聊]在谈“替代”之前，至少知道现阶段AI到底能做些什么（前端版）"
 date: "2026-03-25"
-description: "If you don't about that, you will “die” for nothing.🤖"
+description: "If you don't kwon about that, you will “die” for nothing.🤖"
 headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774448186002.png"
 thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774448186002.png"
 sticky: true
@@ -92,7 +92,7 @@ AI是“脏活累活”的最佳处理者。把重复性、模式化的工作交
 
 关于现阶段AI能干些啥，其实还有很多很多，以上这些只是我认知的常见领域。
 
-这么一看，确实没我们前端人啥事了，**折埋**都得啦
+这么一看，确实没我们前端人啥事了，**折埋**都得啦（折埋：粤语“收摊、完蛋”的意思）
 
 > 等下，甘又未必，仲有机会
 
@@ -105,7 +105,7 @@ AI是“脏活累活”的最佳处理者。把重复性、模式化的工作交
 
 AI可以写代码，但它不理解“为什么需要这段代码”。
 
-举个🌰：
+**举个🌰：**
 <i style="color: #bd65bd;font-weight:bold">一个电商购物车的优惠计算逻辑，涉及会员等级、满减活动、优惠券叠加规则、库存锁定、运费模板……AI可以生成单个函数的实现，但它无法理解这些规则背后的业务意图、历史原因、以及未来可能的变化方向。</i>
 
 **人类的价值在于：** 理解业务、抽象模型、做出权衡。
@@ -166,7 +166,7 @@ AI生成的代码可能能跑，但不一定“好”。
 ⬆️ ***综上，5对4，额，算4.5吧（一点存疑），人类获胜。*** 好罗，唔使失业啰~（暂时的）
 
 ---
-回到标题，**在谈替代之前，至少知道现阶段AI到底能做些什么**。
+回到标题，**在谈“替代”之前，至少知道现阶段AI到底能做些什么**。
 
 是的，胜利是暂时的，AI的快速发展肯定会把结果变成`3 vs 4`，`2 vs 4`...【替代】，貌似就是早晚的事情。
 
@@ -181,6 +181,8 @@ AI的发展是必然的趋势，对于程序员，尤其是前端程序员来说
 <strong style="color:#008d00;text-decoration: underline;font-style: italic;">过去需求接过来，直接照着开干。如今，这部分“敲”的工作会越来越多的交给AI，而我们，则更多的从<span style="color:red">“躲在电脑后”</span>变成<span style="color:red">“走到用户前”</span>，AI反而拉近了我和用户的距离。从<span style="color:red">实现用户的需求</span>到<span style="color:red">理解用户的需求，优化用户的体验</span>，做出更好的产品。</strong>
 
 人类，应该想到更大的脑洞，更多的星辰大海。（我决定了，再过十年，造个BI出来<img src="http://chens-x.github.io/next-blog/images/doge.svg" alt="doge" width="20" height="20" style="display:inline-block;padding-bottom: 4px">）
+
+当然，这不代表我们可以躺平。相反，越清楚 ***AI*** 的边界，越能把精力放在它取代不了的地方。
 
 > AI不会替代你，但会用AI的人，可能会替代不会用AI的人。
 
