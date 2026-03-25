@@ -40,7 +40,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <img
                   src={post.thumbnail}
                   alt={post.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
               )}
