@@ -2,6 +2,9 @@ import { getSortedPostsData, getCategories } from "@/src/lib/posts";
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
 import { Pin } from "lucide-react";
+// import CartoonRobot from "../components/CartoonRobot";
+// import ParticleBackground from "../components/ParticleBackground";
+// import ThreeBackground from "../components/ThreeBackground";
 
 export default function Home() {
   const currentPage = 1;
@@ -17,6 +20,15 @@ export default function Home() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
+      {/* <ThreeBackground /> */}
+      {/* <CartoonRobot style={{position: 'fixed', top: 0, left: 0, zIndex: -1}} /> */}
+      {/* <ParticleBackground
+        style={{position: 'fixed', top: 0, left: 0, zIndex: -1}}
+        particleCount={2500}
+        color="#6c5ce7"
+        size={0.1}
+        speed={0.8}
+      /> */}
       <header className="mb-24">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-stone-900 dark:text-stone-100">
           Writing & Thoughts.
