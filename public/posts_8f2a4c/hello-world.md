@@ -1,7 +1,7 @@
 ---
 title: "Hello World: 我的第一篇blog"
 date: "2026-03-23"
-description: "Welcome to my new blog built with Next.js and Tailwind CSS."
+description: "Welcome to my blog built with Next.js and Tailwind CSS.😁"
 headerImage: "https://chens-x.github.io/next-blog/images/coding.gif"
 thumbnail: "https://chens-x.github.io/next-blog/images/coding.gif"
 sticky: true
