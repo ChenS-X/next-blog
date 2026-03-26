@@ -55,7 +55,7 @@ export default function RootLayout({
           <footer className="border-t border-stone-100 dark:border-stone-900 py-16">
             <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-start gap-8">
               <p className="text-stone-400 dark:text-stone-600 text-sm">
-                &copy; {new Date().getFullYear()} Minimal Blog.
+                &copy; {new Date().getFullYear()} NextBlog.
               </p>
               <div className="flex flex-col gap-4 text-sm text-stone-400 dark:text-stone-600">
                 {/* <a
