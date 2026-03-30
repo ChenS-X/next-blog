@@ -2,8 +2,8 @@
 title: "Web Components：“摆脱”框架的终极方案？"
 date: "2026-03-24"
 description: "聊聊WebComponent的简单使用和未来方向🤖"
-headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774399136862.png"
-thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774399136862.png"
+headerImage: "https://pic1.imgdb.cn/item/69c9e2830ba4e83bd178df14.gif"
+thumbnail: "https://pic1.imgdb.cn/item/69c9e2830ba4e83bd178df14.gif"
 ---
 
 ## Web Component
@@ -55,7 +55,7 @@ customElements.define('my-button', MyButton);
 </html>
 ```
 运行结果：⬇️
-![简单的Web Component](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774401077276.png "简单的Web Component")
+![简单的Web Component](https://pic1.imgdb.cn/item/69c9e4d50ba4e83bd178efad.png "简单的Web Component")
 
 就这样，咱就创建了一个简单的`Web Component`了。
 
@@ -106,13 +106,13 @@ class MyButton extends HTMLElement {
 }
 ```
 控制台打印：⬇️
-![打印](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774402664803.png "打印")
+![打印](https://pic1.imgdb.cn/item/69c9e3c30ba4e83bd178e8aa.png "打印")
 运行结果：⬇️
-![结果对比](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774402645319.png "结果对比")
+![结果对比](https://pic1.imgdb.cn/item/69c9e3c00ba4e83bd178e889.png "结果对比")
 
 啊？？？？不是哥，你闹呢？不就是个按钮颜色改变吗？你整这么一大堆代码？
 <div align="start">
-    <img src="https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774402912223.png" alt="疑惑">
+    <img src="https://pic1.imgdb.cn/item/69c9e3c00ba4e83bd178e88d.gif" alt="疑惑">
 </div>
 
 额~，不如咱聊聊今天的天气🌦️😅！咳咳，不对，总结一下目前的知识点：
@@ -162,7 +162,7 @@ class MyButton extends HTMLElement {
     }
 }
 ```
-![template初识](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774405986485.png "template初识")
+![template初识](https://pic1.imgdb.cn/item/69c9e3c00ba4e83bd178e88b.png "template初识")
 
 还没完，现在这个自定义组件`my-button`和外面是没有隔离的，外部样式会影响内部。
 
@@ -199,7 +199,7 @@ class MyButton extends HTMLElement {
 </html>
 ```
 运行结果：⬇️
-![样式不隔离](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774407411393.png "样式不隔离")
+![样式不隔离](https://pic1.imgdb.cn/item/69c9e3c00ba4e83bd178e88a.png "样式不隔离")
 
 字体样式和`boder-style`被外部样式表影响了。
 
@@ -238,7 +238,7 @@ class MyButton extends HTMLElement {
 
 ```
 运行结果：⬇️
-![样式隔离](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774408522560.png "样式隔离")
+![样式隔离](https://pic1.imgdb.cn/item/69c9e3c00ba4e83bd178e88f.png "样式隔离")
 
 **一些解释：**
 + **影子宿主（`Shadow host`）:** 影子 DOM 附加到的常规 DOM 节点。在这里就是`my-buttom`元素，也就是代码中的`this`。
@@ -281,7 +281,7 @@ class MyButton extends HTMLElement {
 </body>
 ```
 运行结果：⬇️
-![插槽](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774410175943.png "插槽")
+![插槽](https://pic1.imgdb.cn/item/69c9e3b10ba4e83bd178e81a.png "插槽")
 
 怎么样，这样看起来是不是就和`Vue`有点相似了~
 
@@ -300,7 +300,7 @@ npm create vite@latest
 ```
 
 选择`Vanilla`，纯JS项目，不适用`React`或者`Vue`框架
-![Vanilla](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774410835335.png "Vanilla")
+![Vanilla](https://pic1.imgdb.cn/item/69c9e3b10ba4e83bd178e817.png "Vanilla")
 
 ```shell
 # 安装依赖lit和@vue/reactivity
@@ -419,7 +419,7 @@ customElements.define('my-button', MyButton)
 </html>
 ```
 运行结果：⬇️
-![响应式](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774411472035.png "响应式")
+![响应式](https://pic1.imgdb.cn/item/69c9e3b10ba4e83bd178e819.png "响应式")
 
 **一些解释：**
 + **`MyComponent`类：** 一个抽象类，用于创建响应式数据和触发依赖收集和渲染。所有自定义组件都可以继承它。简单理解，就是放在那不动就行了。
@@ -438,10 +438,10 @@ customElements.define('my-button', MyButton)
 还是刚才的项目，我们尝试将它打包，运行`npm run build`
 
 生成打包产物：⬇️
-![打包产物](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774420123935.png "打包产物")
+![打包产物](https://pic1.imgdb.cn/item/69c9e3b10ba4e83bd178e818.png "打包产物")
 
 使用：⬇️
-![使用](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774420052122.png "使用")
+![使用](https://pic1.imgdb.cn/item/69c9e3b20ba4e83bd178e81b.png "使用")
 
 是的，就目前来看，`Web Component`确实比成熟的框架（如`Vue`、`React`）相比，开发起来要麻烦很多。而且没有很好的工具链支持。但是原生支持且轻量，且借助 `Shadow DOM` 实现样式和 `DOM` 结构的强隔离。让它在诸如构建稳定的第三方嵌入组件（如聊天插件、广告组件）以及**微前端**领域都非常友好。
 

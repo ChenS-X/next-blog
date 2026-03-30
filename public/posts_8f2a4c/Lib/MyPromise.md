@@ -2,8 +2,8 @@
 title: "手敲Promise，认识Promise"
 date: "2026-03-24"
 description: "跟着手敲一遍Promise，认识Promise的实现逻辑。"
-headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774341795903.png"
-thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774341795903.png"
+headerImage: "https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df0f.webp"
+thumbnail: "https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df0f.webp"
 ---
 
 # 手敲Promise，认识Promise

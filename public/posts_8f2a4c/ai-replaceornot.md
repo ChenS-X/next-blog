@@ -2,8 +2,8 @@
 title: "[闲聊]在谈“替代”之前，至少知道现阶段AI到底能做些什么(前端版)"
 date: "2026-03-25"
 description: "If you don't kwon about that, you will “die” for nothing.🤖"
-headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774448186002.png"
-thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774448186002.png"
+headerImage: "https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df11.gif"
+thumbnail: "https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df11.gif"
 sticky: true
 ---
 
@@ -173,7 +173,7 @@ AI生成的代码可能能跑，但不一定“好”。
 但，真正用过AI辅助工具的，是真的会切实的感受到科技进步的所带来的好处的。（用过都懂~）
 
 <div align="start">
-    <img src="https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774454448225.png" alt="真香" width="200" height="200">
+    <img src="https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df10.gif" alt="真香" width="200" height="200">
 </div>
 
 AI的发展是必然的趋势，对于程序员，尤其是前端程序员来说，应该转过心态，把 ***怎么做*** 转为 ***为什么这样做，怎样做才能更好***的思维上。

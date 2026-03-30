@@ -2,8 +2,8 @@
 title: "Vue 响应式原理底层"
 date: "2026-03-24"
 description: "上手Vue响应式原理底层细节"
-headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774353400556.png"
-thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774353400556.png"
+headerImage: "https://pic1.imgdb.cn/item/69c9e3050ba4e83bd178e2f9.jpg"
+thumbnail: "https://pic1.imgdb.cn/item/69c9e3050ba4e83bd178e2f9.jpg"
 ---
 
 ## 一、Vue2/3响应式差异的“元凶” ➡️ `Object.defineProperty`&`Proxy`
@@ -294,7 +294,7 @@ function trigger(target, key) {
 
 
 完整的响应式流程：
-![响应式流程图](https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774364267138.png "响应式流程图")
+![响应式流程图](https://pic1.imgdb.cn/item/69c9e3810ba4e83bd178e6b0.png "响应式流程图")
 
 ---
 

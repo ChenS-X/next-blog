@@ -2,8 +2,8 @@
 title: "前端“跨域”对话指南：iframe通信、微前端状态共享与多标签页消息传递"
 date: "2026-03-28"
 description: "聊聊前端通信的那些事☎️"
-headerImage: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774778052028.png"
-thumbnail: "https://fastly.jsdelivr.net/gh/itmore9527/files@main/img/1774778052028.png"
+headerImage: "https://pic1.imgdb.cn/item/69c9e0cb0ba4e83bd178d29a.gif"
+thumbnail: "https://pic1.imgdb.cn/item/69c9e0cb0ba4e83bd178d29a.gif"
 ---
 
 ## 前言
