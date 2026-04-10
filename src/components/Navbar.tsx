@@ -10,21 +10,21 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-let navItems = [
-  { name: "Home", href: "/" },
-  { name: "Categories", href: "/categories" },
-  { name: "About Me", href: "/about" },
-  { name: "RAG Chat", href: "/ragChat" },
-];
-
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const isMobile = useIsMobile();
 
-  if(!isMobile) {
-    navItems = navItems.filter(item => item.name !== "RAG Chat");
+  let navItems = [
+    { name: "Home", href: "/" },
+    { name: "Categories", href: "/categories" },
+    { name: "About Me", href: "/about" },
+    { name: "RAG Chat", href: "/ragChat" },
+  ];
+
+  if (!isMobile) {
+    navItems = navItems.filter((item) => item.name !== "RAG Chat");
   }
 
   const { resolvedTheme } = useTheme();
@@ -180,7 +180,7 @@ export function Navbar() {
                     NextBlog.
                   </Link>
                   <a
-                    href={process.env.NEXT_PUBLIC_GITHUB_PAGE || ''}
+                    href={process.env.NEXT_PUBLIC_GITHUB_PAGE || ""}
                     target="_blank"
                     className="text-lg font-semibold tracking-tight hover:opacity-70 transition-opacity flex items-center gap-1.5"
                   >
