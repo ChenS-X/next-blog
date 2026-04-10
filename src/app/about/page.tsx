@@ -236,7 +236,7 @@ export default function AboutPage() {
       <footer className="pt-12 border-t border-stone-100 dark:border-stone-900">
         <div className="flex gap-6">
           <a
-            href={process.env.GITHUB_PAGE || ""}
+            href={process.env.NEXT_PUBLIC_GITHUB_PAGE || ""}
             target="_blank"
             className="text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
           >

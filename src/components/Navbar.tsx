@@ -8,16 +8,24 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useIsMobile } from "../hooks/useIsMobile";
 
-const navItems = [
+let navItems = [
   { name: "Home", href: "/" },
   { name: "Categories", href: "/categories" },
   { name: "About Me", href: "/about" },
+  { name: "RAG Chat", href: "/ragChat" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const isMobile = useIsMobile();
+
+  if(!isMobile) {
+    navItems = navItems.filter(item => item.name !== "RAG Chat");
+  }
 
   const { resolvedTheme } = useTheme();
   // Close sidebar when route changes
@@ -37,10 +45,21 @@ export function Navbar() {
     };
   }, [isOpen]);
 
+  // const test = async () => {
+  //   fetch("https://blog-rag.csx.life/query", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ question: "我的第一篇博客" }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // };
+
   return (
     <>
       {/* Desktop Navigation */}
       <div className="hidden sm:flex gap-8 text-sm font-medium">
+        {/* <button onClick={test}>测试</button> */}
         {navItems.map((item) => {
           const isActive =
             item.href === "/"
@@ -161,7 +180,7 @@ export function Navbar() {
                     NextBlog.
                   </Link>
                   <a
-                    href={process.env.GITHUB_PAGE || ''}
+                    href={process.env.NEXT_PUBLIC_GITHUB_PAGE || ''}
                     target="_blank"
                     className="text-lg font-semibold tracking-tight hover:opacity-70 transition-opacity flex items-center gap-1.5"
                   >
