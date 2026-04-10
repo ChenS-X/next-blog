@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/src/hooks/useIsMobile";
 import DraggableChatTrigger from "./DraggableChatTrigger";
-// import RagChatInterface from './RagChatInterface';
+import RagChatInterface from "./RagChatInterface";
 
 export default function RagChatGlobalEntrance() {
   const isMobile = useIsMobile();
@@ -44,7 +44,7 @@ export default function RagChatGlobalEntrance() {
 
   useEffect(() => {
     // 切换的瞬间，禁用 动画
-    if(!mounted) return;
+    if (!mounted) return;
     chatRef.current?.style.setProperty("transition", "none");
     setTimeout(() => {
       chatRef.current?.style.setProperty(
@@ -97,46 +97,12 @@ export default function RagChatGlobalEntrance() {
       {/* 侧边栏 */}
       <div
         ref={chatRef}
-        className={`fixed top-0 ${sideByRight ? "right-0" : "left-0"} h-full w-[450px] max-w-full bg-white dark:bg-stone-900 shadow-2xl z-50 border-l border-stone-200 dark:border-stone-800 transform transition-transform duration-300 ease-in-out ${sidebarTransformClass}`}
+        className={`fixed top-0 ${sideByRight ? "right-0" : "left-0"} h-full w-[500px] max-w-full bg-white dark:bg-stone-900 shadow-2xl z-50 border-l border-stone-200 dark:border-stone-800 transform transition-transform duration-300 ease-in-out ${sidebarTransformClass}`}
       >
-        {/* 头部：标题和关闭按钮 */}
-        <div className="flex items-center justify-between p-4 border-b border-stone-200 dark:border-stone-800">
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-            RAG Chat
-          </h2>
-          <button
-            onClick={() => setIsSidebarOpen(false)}
-            className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
-            aria-label="Close chat"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-stone-600 dark:text-stone-400"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-
-        {/* 内容区域 */}
-        <div className="h-[calc(100%-60px)] overflow-y-auto p-4">
-          {/* 这里可以放入实际的 RagChatInterface 组件 */}
-          {/* <RagChatInterface isSidebar={true} /> */}
-
-          {/* 临时占位内容 */}
-          <div className="text-stone-600 dark:text-stone-400">
-            Chat interface content goes here...
-          </div>
-        </div>
+        <RagChatInterface
+          isSidebar={true}
+          onClose={() => setIsSidebarOpen(false)}
+        />
       </div>
     </>
   );
