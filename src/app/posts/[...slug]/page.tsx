@@ -61,7 +61,7 @@ export default async function Post({
         </div>
 
         {postData.headerImage && (
-          <div className="aspect-video relative rounded-2xl overflow-hidden mb-16">
+          <div className="aspect-video relative rounded-2xl overflow-hidden mb-16 hover:shadow-[0_0_5px_0px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_5px_0px_rgba(255,255,255,0.1)]">
             <img
               src={postData.headerImage}
               alt={postData.title}

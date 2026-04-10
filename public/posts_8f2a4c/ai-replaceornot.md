@@ -4,7 +4,7 @@ date: "2026-03-25"
 description: "If you don't kwon about that, you will “die” for nothing.🤖"
 headerImage: "https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df11.gif"
 thumbnail: "https://pic1.imgdb.cn/item/69c9e2820ba4e83bd178df11.gif"
-sticky: true
+sticky: false
 ---
 
 > 能够生存下来的，不是最强壮的物种，也不是最聪明的物种，而是对变化反应最快的物种。—— 查尔斯·达尔文
