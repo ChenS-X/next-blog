@@ -63,10 +63,34 @@ export default function AboutPage() {
             <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-emerald-500" />
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
               <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100">
+                致力于成为：全栈开发工程师（AI）
+              </h3>
+              <span className="text-sm font-mono text-stone-400 dark:text-stone-600">
+                2026.4 — （广州）
+              </span>
+            </div>
+            <p className="text-stone-600 dark:text-stone-400 font-medium mb-4">
+              👉<a href="https://chens-x.github.io/next-blog/posts/ragFundation">NextJS博客 + RAG问答系统</a>
+            </p>
+            <div className="text-stone-500 dark:text-stone-500 text-sm leading-relaxed">
+              <p>
+                <strong>🤖职责：</strong>
+                整个系统架构选定，实现，维护等。
+              </p>
+              <strong>
+                <a href="https://chens-x.github.io/next-blog/posts/ragFundation">👉点击链接查看</a>
+              </strong>
+              
+            </div>
+          </div>
+          <div className="relative pl-8 border-l border-stone-100 dark:border-stone-900">
+            <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-emerald-500" />
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+              <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100">
                 前端开发工程师
               </h3>
               <span className="text-sm font-mono text-stone-400 dark:text-stone-600">
-                2022.4 — （北京）
+                2022.4 — 2025.5（北京）
               </span>
             </div>
             <p className="text-stone-600 dark:text-stone-400 font-medium mb-4">
