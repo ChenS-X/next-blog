@@ -22,6 +22,10 @@ export default function DraggableChatTrigger({
 
   const positionRef = useRef({ x: 0, y: 0 });
 
+  // 记录当前按钮是靠左还是靠右，用于 resize 时重新吸附
+  // true = 右侧, false = 左侧
+  const sideRef = useRef(true);
+
   const buttonSize = 56; // 按钮大小
 
   // 跟踪组件是否已挂载，已解决服务端渲染 hydration  mismatch 或初始动画问题
@@ -54,6 +58,65 @@ export default function DraggableChatTrigger({
     };
     positionRef.current = initialPos;
     setPosition(initialPos);
+  }, []);
+
+  // 监听窗口大小变化，根据当前吸附侧重新计算位置
+  useEffect(() => {
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+
+      // 获取当前的 Y 坐标
+      let currentY = positionRef.current.y;
+
+      // 1. 处理 Y 轴：确保不超出底部，也不超出顶部
+      const maxY = currentHeight - buttonSize - 16; // 底部留 16px
+      const minY = 16; // 顶部留 16px
+
+      // 如果当前 Y 超出了新的高度范围，进行修正
+      if (currentY > maxY) {
+        currentY = maxY;
+      } else if (currentY < minY) {
+        currentY = minY;
+      }
+
+      // 2. 处理 X 轴：根据 sideRef 重新吸附到左侧或右侧
+      let newX = positionRef.current.x;
+      const margin = 16; // 边距
+
+      if (sideRef.current) {
+        // 如果之前在右侧，重新计算右侧位置
+        newX = currentWidth - buttonSize - margin - 10;
+      } else {
+        // 如果之前在左侧，重新计算左侧位置
+        newX = margin;
+      }
+
+      const newPos = { x: newX, y: currentY };
+
+      // 只有当位置确实发生变化时才更新 state
+      if (
+        newPos.x !== positionRef.current.x ||
+        newPos.y !== positionRef.current.y
+      ) {
+        positionRef.current = newPos;
+        setPosition(newPos);
+      }
+    };
+
+    // 添加防抖
+    let timeoutId: NodeJS.Timeout;
+    const debouncedResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleResize, 100);
+    };
+
+    window.addEventListener("resize", debouncedResize);
+
+    return () => {
+      window.removeEventListener("resize", debouncedResize);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // 处理鼠标/触摸开始
@@ -154,7 +217,10 @@ export default function DraggableChatTrigger({
 
     setPosition(finalPos);
 
-    onSwitchSide(currentX + buttonSize / 2 > threshold);
+    const isRight = currentX + buttonSize / 2 > threshold;
+    sideRef.current = isRight;
+
+    onSwitchSide(isRight);
   };
 
   const onMouseUp = () => {
@@ -251,7 +317,7 @@ export default function DraggableChatTrigger({
       >
         <button
           onClick={handleClick}
-          className={`w-14 h-14 shadow-[0px_0px_10px_2px_rgba(0,0,0,0.25)] dark:shadow-[0_0_10px_2px_rgba(255,255,255,0.6)] rounded-full transition-all flex items-center justify-center ${isDragging ? "scale-70 shadow-xl" : ""}`}
+          className={`w-14 h-14 bg-white dark:bg-stone-950 shadow-[0px_0px_10px_2px_rgba(0,0,0,0.25)] dark:shadow-[0_0_10px_2px_rgba(255,255,255,0.6)] rounded-full transition-all flex items-center justify-center ${isDragging ? "scale-70 shadow-xl" : ""}`}
           aria-label="Open Chat"
         >
           {" "}

@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Send, X } from "lucide-react";
+import { Trash2, Send, X } from "lucide-react";
 
 interface RagChatInterfaceProps {
   onClose?: () => void; // 用于侧边栏关闭
@@ -158,6 +158,23 @@ export default function RagChatInterface({
     // }
   };
 
+  // 一键删除上下文缓存
+  const onDeleteLocalCache = () => {
+    // console.log(messages);
+    localStorage.removeItem(STORAGE_KEY);
+    const fristAssistantMessage: Message = messages.filter(
+      (m) => m.role === "assistant",
+    )[0];
+    // console.log(fristAssistantMessage)
+    setMessages((prev) => [fristAssistantMessage]);
+    // setMessages([
+    //   {
+    //     role: "assistant",
+    //     content: "已删除本地缓存，请重新开始会话。",
+    //   },
+    // ]);
+  };
+
   return (
     <div
       className={`flex flex-col h-full bg-white dark:bg-stone-900 ${isSidebar ? "w-full" : ""}`}
@@ -165,14 +182,23 @@ export default function RagChatInterface({
       {/* 头部 */}
       <div className="flex items-center justify-between p-4 border-b border-stone-200 dark:border-stone-800">
         <h2 className="text-lg font-semibold">RAG 智能问答</h2>
-        {isSidebar && onClose && (
+        <div>
           <button
-            onClick={onClose}
+            title="一键删除上下文缓存"
+            onClick={onDeleteLocalCache}
             className="p-2 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full"
           >
-            <X size={20} />
+            <Trash2 size={20} />
           </button>
-        )}
+          {isSidebar && onClose && (
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full"
+            >
+              <X size={20} />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* 消息列表 */}

@@ -1,13 +1,17 @@
 "use client";
 import RagChatInterface from "@/src/components/RagChatInterface";
 import { useFooter } from "@/src/contexts/FooterContext";
+import { useIsMobile } from "@/src/hooks/useIsMobile";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 type Props = {};
 
 const page = (props: Props) => {
+  const router = useRouter();
   // 进入这个页面后隐藏 Footer
   const { setShowFooter } = useFooter();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // 组件挂载时，设置footer为隐藏
@@ -21,8 +25,20 @@ const page = (props: Props) => {
     };
   }, [setShowFooter]);
 
+
+  useEffect(() => {
+    if(isMobile === false) {
+      router.replace('/')
+    }
+  }, [isMobile, router])
+
+  // 如果还在初始化，可以返回 null 或 loading，避免闪烁
+  if (isMobile === undefined) return null; 
+  if (!isMobile) return null; // 或者显示 Loading
+
+
   return (
-    <div>
+    <div className="h-[calc(100vh-81px)] w-full overflow-hidden">
       <RagChatInterface isSidebar={false} />
     </div>
   )

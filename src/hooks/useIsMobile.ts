@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react';
 
 export function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(false);
+  // 初始值设为 undefined，表示“尚未确定”
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     // 初始化检查
