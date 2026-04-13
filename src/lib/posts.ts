@@ -23,6 +23,7 @@ export interface PostData {
   deleted?: boolean;
   sticky?: boolean;
   contentHtml?: string;
+  hidden?: boolean; // 控制是否隐藏文章
 }
 
 function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): string[] {
@@ -76,10 +77,11 @@ export function getSortedPostsData(): PostData[] {
           thumbnail: string; 
           deleted?: boolean;
           sticky?: boolean;
+          hidden?: boolean;
         }),
       };
     })
-    .filter(post => !post.deleted); // Filter out deleted posts
+    .filter(post => !post.deleted && !post.hidden); // Filter out deleted and hidden posts
 
   // Sort posts by sticky status first, then by date
   return allPostsData.sort((a, b) => {
@@ -121,6 +123,10 @@ export async function getPostData(slugParts: string[]): Promise<PostData> {
     throw new Error('Post not found');
   }
 
+  if (matterResult.data.hidden) {
+    throw new Error('Post no found')
+  }
+
   // Use remark and rehype to convert markdown into HTML string with syntax highlighting
   const processedContent = await remark()
     .use(remarkGfm)
@@ -146,6 +152,7 @@ export async function getPostData(slugParts: string[]): Promise<PostData> {
       thumbnail: string; 
       deleted?: boolean;
       sticky?: boolean;
+      hidden?: boolean;
     }),
   };
 }
@@ -162,7 +169,7 @@ export function getAllPostSlugs() {
     .filter((filePath) => {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const matterResult = matter(fileContents);
-      return !matterResult.data.deleted;
+      return !matterResult.data.deleted && !matterResult.data.hidden;
     })
     .map((filePath) => {
       const relativePath = path.relative(postsDirectory, filePath);
