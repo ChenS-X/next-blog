@@ -8,6 +8,12 @@ thumbnail: "https://pic1.imgdb.cn/item/69dc98941395de9438aaa287.gif"
 
 跟着代码实现一篇，应该就理解合成事件的机制了，不是很难理解的那种。
 
+### HTML事件基础
+建议直接看👉[***MDN HTML事件***](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/Events)，更系统也更仔细
+
+HTML事件**捕获**&**冒泡**传递示意图
+![示意图](https://pic1.imgdb.cn/item/69dda9631395de9438ab623b.png "示意图")
+
 ### React17以前
 ```js
 // 以click为例
