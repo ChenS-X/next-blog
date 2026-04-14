@@ -2,8 +2,8 @@
 title: "状态管理Context API 🆚 Redux"
 date: "2026-04-13"
 description: "context api vs redux，一些简单的示例对比✍️"
-headerImage: "https://pic1.imgdb.cn/item/69dcec9d1395de9438ab1971.png"
-thumbnail: "https://pic1.imgdb.cn/item/69dcec9d1395de9438ab1971.png"
+headerImage: "https://pic1.imgdb.cn/item/69ddb2591395de9438ab73ba.png"
+thumbnail: "https://pic1.imgdb.cn/item/69ddb2591395de9438ab73ba.png"
 ---
 
 ## 一、先来对比
