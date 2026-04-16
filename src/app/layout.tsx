@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "@/src/index.css";
 import "highlight.js/styles/github-dark.css";
 import { ThemeProvider } from "@/src/components/ThemeProvider";
@@ -13,6 +14,8 @@ import ConditionalFooter from "../components/ConditionalFooter";
 import RagChatGlobalEntrance from "../components/RagChatGlobalEntrance";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const BAIDU_TONGJI_ID = "5e1224997f6db48341352f01b4cae948";
 
 export const metadata: Metadata = {
   title: "Next Blog",
@@ -29,6 +32,22 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-white dark:bg-stone-950 text-stone-900 dark:text-stone-100 min-h-screen flex flex-col transition-colors duration-300`}
       >
+        {/* 3. 添加百度统计脚本 */}
+        <Script
+          id="baidu_tongji"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?${BAIDU_TONGJI_ID}";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+              })();
+            `,
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FooterProvider>
             <header className="sticky top-0 z-50 bg-white/70 dark:bg-stone-950/70 backdrop-blur-lg border-b border-stone-100 dark:border-stone-900">
